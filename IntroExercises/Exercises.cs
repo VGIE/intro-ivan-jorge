@@ -48,7 +48,37 @@ namespace IntroExercises
         //-1 if endIndex is less than startIndex or any of them is outside the array
         public static int Find(int[] array, int value, int startIndex, int endIndex)
         {
-            return 0;
+            if(array == null || endIndex < startIndex || startIndex < 0 || endIndex > array.length)
+            {
+                return -1;                
+            }
+
+            /*for(int i = 0; i < array.length; i++)
+            {
+                if(i<startIndex)
+                {
+                    ;
+                }
+                if(array[i]==value)
+                {
+                    return i;
+                }
+                if(i>endIndex)
+                {
+                    return -1;
+                }
+            }
+            return -1;
+            */
+
+            for(int i = startIndex; i < endIndex; i++)
+            {
+               if(array[i]==value)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         //TODO #4
