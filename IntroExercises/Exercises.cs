@@ -87,19 +87,53 @@ namespace IntroExercises
 
         public static int Count(int[] array, int value, int startIndex, int endIndex)
         {
-            return 0;
+            if(array == null)
+            {
+                return 0;
+            }
+
+            int cont = 0;
+            for(int i = startIndex; i < endIndex; i++)
+            {
+                if(array[i] == value)
+                {
+                    cont++;
+                }
+            }
+            return cont;
         }
 
         //TODO #5
         //AreEqual should return true if both arrays have the same length and each element appears the same number of times in A and B
         //Examples:
         //  AreEqual(new int[] { 1, 1, 2}, new int[] { 1, 2, 1} => true
+
         //  AreEqual(new int[] { 1, 1, 2}, new int[] { 1, 2} => false
+
         //  AreEqual(new int[] { 1, 1, 2}, new int[] { 1, 2, 2} => false
+
         //  AreEqual(new int[] { 1, 1, 2}, null) => false
+
         //  AreEqual(null, null) => false
+
         public static bool AreEqual(int[] A, int[] B)
         {
+            if(A.length != B.length)
+            {   
+                return false;
+            }
+
+            for(int i = 0; i<A.length; i++)
+            {
+                if(A[i]==B[j])
+                {
+                    if(Count(A,A[i],0,A.length) != Count(B,A[i],0,B.length))
+                    {
+                        return false;
+                    }
+                }
+                
+            }
             return true;
         }
     }
